@@ -25,6 +25,9 @@ keyPressed = []
 coin_score=4
 water_score=7
 fire_score=10
+current_level=0
+gravity_after_id=None
+scroll_after_id=None
 
 
 
