@@ -665,6 +665,17 @@ canvas.tag_bind("startgame","<Button-1>", startGame )
 canvas.tag_bind("level1-","<Button-1>", level01 )
 canvas.tag_bind("level2-","<Button-1>", level02 )
 canvas.tag_bind("level3-","<Button-1>", level03 )
+
+# ==============> HAND CURSOR ON CLICKABLE BUTTONS <==================
+def _hand_cursor(event):
+    canvas.config(cursor="hand2")
+def _default_cursor(event):
+    canvas.config(cursor="")
+for _tag in ("help", "story", "backhome", "button_level",
+             "startgame", "level1-", "level2-", "level3-"):
+    canvas.tag_bind(_tag, "<Enter>", _hand_cursor)
+    canvas.tag_bind(_tag, "<Leave>", _default_cursor)
+
 root.bind("<Key>", start_move)
 root.bind("<KeyRelease>", stop_move)
 # canvas.tag_bind("RETRY","<Button-1>", Retry )
